@@ -1,3 +1,4 @@
 [submodule "demo-consul"]
 	path = demo-consul
 	url = git@github.com:bartlomiejmakarewicz/demo-consul.git
+	branch = master
