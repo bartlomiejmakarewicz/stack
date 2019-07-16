@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  consul:
+    image: consul
+    ports:
+      - "8500:8500"
+    environment:
+      CONSUL_BIND_INTERFACE: eth0
+    networks:
+      - stack
+  demo-consul:
+    image: bmakarewicz/demo-consul:latest
+    build:
+      context: demo-consul
+    ports:
+      - "8080:8080"
+    networks:
+      - stack
+
+networks:
+  stack:
