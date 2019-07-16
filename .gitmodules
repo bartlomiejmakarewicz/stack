@@ -2,3 +2,7 @@
 	path = demo-consul
 	url = git@github.com:bartlomiejmakarewicz/demo-consul.git
 	branch = master
+[submodule "cloud-config-service"]
+	path = cloud-config-service
+	url = git@github.com:bartlomiejmakarewicz/cloud-config-service.git
+	branch = master

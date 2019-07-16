@@ -9,6 +9,18 @@ services:
       CONSUL_BIND_INTERFACE: eth0
     networks:
       - stack
+
+  cloud-config-service:
+    image: bmakarewicz/cloud-config-service:latest
+    build:
+      context: cloud-config-service
+    ports:
+      - "8888:8888"
+    networks:
+      - stack
+    depends_on:
+      - consul
+
   demo-consul:
     image: bmakarewicz/demo-consul:latest
     build:
@@ -17,6 +29,9 @@ services:
       - "8080:8080"
     networks:
       - stack
+    depends_on:
+      - consul
+      - cloud-config-service
 
 networks:
   stack:
