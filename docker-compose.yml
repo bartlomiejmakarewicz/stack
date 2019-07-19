@@ -27,6 +27,8 @@ services:
     image: bmakarewicz/cloud-config-service:latest
     build:
       context: cloud-config-service
+    environment:
+      - GIT_URI=https://github.com/bartlomiejmakarewicz/cloud-config.git
     ports:
       - "8888:8888"
     networks:
