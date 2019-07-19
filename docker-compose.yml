@@ -10,6 +10,19 @@ services:
     networks:
       - stack
 
+  rabbit:
+    image: bmakarewicz/rabbitmq:latest
+    build:
+      context: rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - stack
+    hostname: rabbit
+    depends_on:
+      - consul
+
   cloud-config-service:
     image: bmakarewicz/cloud-config-service:latest
     build:
@@ -32,6 +45,7 @@ services:
     depends_on:
       - consul
       - cloud-config-service
+      - rabbit
 
 networks:
   stack:

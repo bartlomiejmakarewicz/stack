@@ -6,3 +6,7 @@
 	path = cloud-config-service
 	url = git@github.com:bartlomiejmakarewicz/cloud-config-service.git
 	branch = master
+[submodule "rabbit"]
+	path = rabbit
+	url = git@github.com:bartlomiejmakarewicz/rabbit.git
+	branch = master
